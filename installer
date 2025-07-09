@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-# do this if you haven't installed homebrew already
+# -------- uncomment these next lines if you haven't installed homebrew already ---------
 
 # /bin/bash -c "$(curl -fsS https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)
 # touch ~/.zshrc
@@ -8,6 +8,8 @@
 #   echo 'export PATH=/opt/homebrew/bin:' >> ~/.zshrc
 #   source ~/.zshrc
 # fi
+
+# ---------------------------------------------------------------------------------------
 
 brew install gnu-sed
 brew install gcc
