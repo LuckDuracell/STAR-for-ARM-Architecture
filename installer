@@ -27,5 +27,5 @@ mkdir -p ../bin/macOS_ARM
 
 cp ./STAR ../bin/macOS_ARM/
 
-#success message
+# success message
 echo "Done! To use, CD into STAR/bin/macOS_ARM and run the compiled version with ./STAR --command"
