@@ -1,0 +1,29 @@
+#!/bin/zsh
+
+# do this if you haven't installed homebrew already
+
+# /bin/bash -c "$(curl -fsS https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)
+# touch ~/.zshrc
+# if ! grep -q '/opt/homebrew/bin' ~/.zshrc; then
+#   echo 'export PATH=/opt/homebrew/bin:' >> ~/.zshrc
+#   source ~/.zshrc
+# fi
+
+brew install gnu-sed
+brew install gcc
+cd "$(dirname "$0")"
+git clone https://github.com/alexdobin/STAR.git
+cd STAR
+cd source
+
+gsed -i '/^CXXFLAGS_SIMD ?= -mavx2$/s/^/#/' Makefile
+
+
+make STARforMacStatic CXX=g++-15 CC=gcc-15
+
+mkdir -p ../bin/macOS_ARM
+
+cp ./STAR ../bin/macOS_ARM/
+
+#success message
+echo "Done! To use, CD into STAR/bin/macOS_ARM and run the compiled version with ./STAR --command"
